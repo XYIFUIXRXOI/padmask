@@ -31,11 +31,19 @@ Entry (IXposedHookLoadPackage)
 ## 构建
 
 ```bash
+apt-get install -y openjdk-17-jdk-headless aapt
 ./build.sh
 ```
 
-需要 JDK 17 + Android build-tools（aapt / d8 / apksigner）+ `android.jar`。
-脚本会把产物签名后放到 `/sdcard/Download/DSH-Go/PadMask-1.0.apk`。
+依赖（路径在脚本顶部可改）：
+
+| 组件 | 说明 |
+| --- | --- |
+| `aapt` | 系统包，**必须用 arm64 版**；Google build-tools 是 x86_64，在手机上跑不了 |
+| `android.jar` | platform-33 解压得到的 `android-13/android.jar` |
+| `d8.jar` / `apksigner.jar` | 取自 build-tools 的 `lib/`，是 Java 实现，架构无关 |
+
+产物签名后输出到 `/sdcard/Download/DSH-Go/PadMask-1.0.apk`。
 
 ## 风险
 

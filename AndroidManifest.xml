@@ -4,6 +4,8 @@
     android:versionCode="1"
     android:versionName="1.0">
 
+    <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="33" />
+
     <application
         android:label="PadMask"
         android:hasCode="true">
