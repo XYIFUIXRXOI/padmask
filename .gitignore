@@ -2,4 +2,5 @@ build/
 .sdk/
 *.jks
 *.apk
+!dist/*.apk
 *.dex
